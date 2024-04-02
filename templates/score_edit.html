@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+<div  class="m-form-text">
+    <h2>楽譜の編集</h2>
+    <form action="{{ url_for('score_update', id=score.id) }}" method="POST" style="margin-left : 15vw;">
+        <label for="number">番号</label><br>
+        <input type="text" name="number" value="{{ score.number }}"><br>
+        <label for="title">曲名</label><br>
+        <input type="text" name="title" value="{{ score.title }}"><br>
+        <label for="composer">作曲者</label><br>
+        <input type="text" name="composer" value="{{ score.composer }}"><br>
+        <label for="arranger">編曲者</label><br>
+        <input type="text" name="arranger" value="{{ score.arranger }}">
+        <input type="submit" value="追加" style="margin-left : 5vw;">
+    </form>
+</div>
+{% endblock %}

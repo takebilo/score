@@ -1,0 +1,19 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<head>
+    <meta charset="UTF-8">
+    <title>香川大学吹奏楽団 楽譜管理</title>
+</head>
+<body>
+    <h1 class="title">香川大学吹奏楽団</h1>
+    <h1 class="title">楽譜管理</h1>
+    <form action="/add_score" method="get"><br>
+        <button type="submit">楽譜追加</button>
+    </form>
+    <form action="/score_delete" method="get"><br>
+        <button type="submit">楽譜削除</button>
+    </form><br>
+    <button onclick="location.href='/score_logout'">Logout</button>
+    <br>
+    <h3  style="text-align: center">連絡先：takumikobayashi0704@gmail.com</h3>
+</body>

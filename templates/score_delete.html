@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+<div class="container mt-4">
+    <h2>楽譜一覧</h2>
+    <h2 style="color:red;">警告：一度削除すると復元はできません．</h2>
+    <h2 style="color:red;">With great power comes great responsibility.</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">番号</th>
+              <th scope="col">曲名</th>
+              <th scope="col">作曲者</th>
+              <th scope="col">編曲者</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for score in scores %}
+            <tr>
+              <th scope="row">{{ score.id }}</th>
+              <td>{{ score.number }}</td>
+              <td>{{ score.title }}</td>
+              <td>{{ score.composer }}</td>
+              <td>{{ score.arranger }}</td>
+              <td>
+                <form action="{{ url_for('score_delete', id=score.id) }}" method="POST">  
+                  <input class="btn btn-danger btn-sm" type="submit" value="削除">  
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+  <button type="button" onclick="location.href='/score_after_login'">戻る</button>
+</div>
+{% endblock %}

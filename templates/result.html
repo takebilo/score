@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+<div class="container mt-4">
+    <h2>検索結果</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">番号</th>
+              <th scope="col">曲名</th>
+              <th scope="col">作曲者</th>
+              <th scope="col">編曲者</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for search_result in search_results %}
+            <tr>
+              <th scope="row">{{ search_result.id }}</th>
+              <td>{{ search_result.number }}</td>
+              <td>{{ search_result.title }}</td>
+              <td>{{ search_result.composer }}</td>
+              <td>{{ search_result.arranger }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+    </table>
+</div>
+{% endblock %}

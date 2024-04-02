@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+<body class="score">
+<div  class="container mt-4">
+    <form action="/add_score" method="POST" style="text-align: center;">
+        <label for="number">番号</label><br>
+        <input type="text" name="number" placeholder="例:N-1" maxlength="30"><br>
+        <label for="title">曲名</label><br>
+        <input type="text" name="title" maxlength="30"><br>
+        <label for="composer">作曲者</label><br>
+        <input type="text" name="composer" maxlength="30"><br>
+        <label for="arranger">編曲者</label><br>
+        <input type="text" name="arranger" maxlength="30">
+        <br>
+        <br>
+        <input type="submit" value="追加" style="text-align: center;">
+    </form>
+    <button type="button" onclick="location.href='/score_after_login'">戻る</button>
+</div>
+</body>
+{% endblock %}
